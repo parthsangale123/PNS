@@ -209,12 +209,12 @@ public class MazeGeneratorTilemap : MonoBehaviour
     IEnumerator ZombieSpawnLoop()
     {
         while (true)
-        {
-            yield return new WaitForSeconds(spawnCheckInterval);
+        {   
+            yield return new WaitForSeconds(0.5f);
 
             if (player == null) continue;
-
             PlayerController pc = player.GetComponent<PlayerController>();
+            
             if (pc == null) continue;
 
             int maxZombies = Mathf.CeilToInt(pc.GetMaxZombieCap());
@@ -227,7 +227,7 @@ public class MazeGeneratorTilemap : MonoBehaviour
             {
                 Vector3 worldPos = GetWorldPosition(tile);
                 float dist = Vector3.Distance(worldPos, playerPos);
-                if (dist >= 2 * tileSize && dist <= 9* tileSize)
+                if (dist >= 3 * tileSize && dist <= 7* tileSize)
                     validTiles.Add(tile);
             }
 

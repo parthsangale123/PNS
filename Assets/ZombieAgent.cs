@@ -43,7 +43,7 @@ public class SimpleZombie : MonoBehaviour
         {
             Vector3 toPlayer = player.position - transform.position;
             float dist = toPlayer.magnitude;
-
+           
             if (dist > attackRange)
             {
                 moveDir = toPlayer.normalized;
@@ -164,6 +164,7 @@ public class SimpleZombie : MonoBehaviour
 
         anim.SetInteger("direction", direction);
         anim.SetInteger("state", state);
+        
     }
 
     void UpdateSortingOrder()
@@ -186,6 +187,6 @@ public class SimpleZombie : MonoBehaviour
         // sr.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
     }
     void attack(){
-        PlayerController.breathingCapacity-=2;
+        PlayerController.breathingCapacity-=1;
     }
 }

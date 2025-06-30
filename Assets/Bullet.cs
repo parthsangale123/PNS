@@ -13,10 +13,11 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
     public void SetDirection(Vector2 dir)
-    {
-        direction = dir.normalized;
-        
-    }
+{
+    // Rotate 90 degrees behind (clockwise)
+    direction = new Vector2(dir.y, -dir.x).normalized;
+}
+
 
     void Update()
     {

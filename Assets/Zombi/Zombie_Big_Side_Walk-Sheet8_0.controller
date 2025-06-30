@@ -236,7 +236,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: direction
     m_EventTreshold: 1
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
@@ -477,7 +477,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: direction
     m_EventTreshold: 1
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
@@ -629,7 +629,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: direction
     m_EventTreshold: 1
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
@@ -826,7 +826,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: direction
     m_EventTreshold: 1
-  - m_ConditionMode: 3
+  - m_ConditionMode: 6
     m_ConditionEvent: state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
@@ -882,8 +882,8 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: -6461040004452070313}
   - {fileID: 7503175989406851340}
+  - {fileID: -6461040004452070313}
   - {fileID: 392773584147190944}
   - {fileID: -5732777193401306429}
   - {fileID: -1919868018559639566}
@@ -978,22 +978,22 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5956452885460847475}
-    m_Position: {x: 190, y: 50, z: 0}
+    m_Position: {x: 420, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8897467045886417261}
     m_Position: {x: 190, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6254061238025805515}
-    m_Position: {x: 170, y: -30, z: 0}
+    m_Position: {x: 290, y: -250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6531697823568046728}
-    m_Position: {x: 190, y: -110, z: 0}
+    m_Position: {x: 470, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7125462575729266785}
-    m_Position: {x: 180, y: -70, z: 0}
+    m_Position: {x: 140, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3891115665032877001}
-    m_Position: {x: 190, y: 80, z: 0}
+    m_Position: {x: 150, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1944548305224870742}
     m_Position: {x: 210, y: 120, z: 0}

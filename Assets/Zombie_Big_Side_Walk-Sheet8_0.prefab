@@ -199,8 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a290bda699910448919421d05b749fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHits: 8
+  maxHits: 5
   animator: {fileID: 932730477362389846}
+  checkRadius: 147
 --- !u!114 &1132513077904224826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,9 +215,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderSpeed: 15
-  chaseSpeed: 18
+  chaseSpeed: 22
   visionRange: 120
-  attackRange: 3
+  attackRange: 5
   tileCheckDistance: 10.5
   decisionDelay: 1
   wallMask:

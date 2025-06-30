@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour
     public GameObject g2;
     public enum WeaponType { None, Lamp, Flower, Guitar, WaterBottle, Hairpin, Pencil, Gun, Chappal, Umbrella }
     public WeaponType equippedWeapon = WeaponType.None;
-
-    public static float breathingCapacity = 100f;
+    bool over;
+    public static float breathingCapacity = 200f;
     public float timeRemaining = 360f;
     private bool isDead = false;
 
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (isDead) return;
-
+        if(over) return;
         HandleTimers();
         HandleMovementInput();
         HandleAttackInput();
@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (isDead) return;
+        if(over) return;
         float speed = moveSpeed;
         if (Input.GetKey(KeyCode.LeftShift)) speed *= 2f;
         rb.linearVelocity = moveInput.normalized * speed;
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
     void HandleTimers()
     {
         float drain = moveInput.magnitude > 0 ? 0.15f : 0f;
-
+        if (Input.GetKey(KeyCode.LeftShift)) drain *= 12f;
         for (int i = 1; i < inventory.Count; i++)
             drain += Mathf.Pow(0.03f, 0.9f) * Mathf.Pow(i, 1.4f);
 
@@ -390,7 +391,7 @@ public class PlayerController : MonoBehaviour
                 freq += Mathf.Pow(bag.freqBase, 1.4f);
         }
 
-        return Mathf.Min(freq, 2f);
+        return Mathf.Clamp(freq, 0.2f, 2f);
     }
 
     public int GetMaxZombieCap()
@@ -405,7 +406,7 @@ public class PlayerController : MonoBehaviour
                 cap += Mathf.Pow(bag.capBase, 1.25f);
         }
 
-        return Mathf.Min(45, Mathf.CeilToInt(cap));
+        return Mathf.Min(25, Mathf.CeilToInt(cap));
     }
 
     void OnDrawGizmosSelected()
@@ -416,6 +417,7 @@ public class PlayerController : MonoBehaviour
     }
     public void win(){
         g2.SetActive(true);
+        over=true;
         Time.timeScale=0f;
     }
 }

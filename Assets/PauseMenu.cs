@@ -24,10 +24,12 @@ public class PauseMenu : MonoBehaviour
         g2.SetActive(true);
         g1.SetActive(false);
         Time.timeScale=0f;
+        paused=true;
     }
     public void Resume(){
         g2.SetActive(false);
         g1.SetActive(true);
+        paused=false;
         Time.timeScale=1f;
     }
     public void Restart(){
